@@ -112,15 +112,21 @@ const app5 = {
     data() {
         return {
             message : 'こんにちは',
+            counter     : 0,
+            otherCounter: 0,
+        }
+    },
+    computed: {
+        lessThanThree_Computed  : function() {
+            console.log('computed');
+            return this.counter > 3 ? '3よりも上' : '3以下'
         }
     },
     methods: {
-        // counter             : function(multiple) {
-        //     if(multiple === undefined) {
-        //         this.number++;
-        //     } else {
-        //         this.number += 1 * multiple;
-        //     }
+        lessThanFive_Method     : function() {
+            console.log('methods');
+            return  this.counter > 5 ? '5よりも上' : '5以下'
+        }
     },
 }
 Vue.createApp(app5).mount('#app5');

@@ -86,6 +86,20 @@
 				<input type="text" v-model="message">
 				<p>{{ message }}</p>
 			</div>
+			<div class="row border-top mt-3 pt-3">
+				<div class="col">
+					<p>{{ counter }}</p>
+					<button @click="counter += 1" class="mx-1">+1</button>
+					<button @click="counter -= 1" class="mx-1">-1</button>
+					<p>{{ lessThanThree_Computed }}</p>
+					<p>{{ lessThanFive_Method() }}</p>
+				</div>
+				<div class="col">
+					<!-- lessThanFive_Method()が、otherCountと関連がないのにイベント発火するのを確認 -->
+					<p>{{ otherCounter }}</p>
+					<button @click="otherCounter += 1" class="mx-1">別の+1</button>
+				</div>
+			</div>
 		</div>
     </div>
 
