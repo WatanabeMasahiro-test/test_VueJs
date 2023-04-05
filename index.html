@@ -41,6 +41,19 @@
 				<a v-bind="teitterObj" class="d-block col">Twitter</a>
 			</div>
 		</div>
+
+		<hr>
+
+		<div id="app3">
+			<div>
+				<p>現在『<span class="px-1">{{ number }}</span>』回クリックされています</p>
+				<button v-on:click="counter()" class="btn btn-primary">カウントアップ</button>
+			</div>
+			<div class="border-top mt-3 pt-3">
+				<p>X:{{ x }}、Y:{{ y }}</p>
+				<p><span v-on:mousemove="changeMousePosition($event, 3)" class="bg-info p-1">マウスを載せて動かしてみよう</span></p>
+			</div>
+		</div>
     </div>
 
 	<hr>

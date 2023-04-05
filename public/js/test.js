@@ -1,4 +1,5 @@
 $(function() {
+    var undefined;
 
     f_test();
 
@@ -18,12 +19,12 @@ const app = {
         return {
             message : 'HelloWorld!',
             message2: 'HELLO',
-            ok      : true
+            ok      : true,
         }
     },
     methods: {
         reverseMessage  : function() {
-            this.message = this.message.split('').reverse().join('')
+            this.message = this.message.split('').reverse().join('');
         },
         sayHi           : function() {
             return 'Hi!!!';
@@ -46,13 +47,46 @@ const app2 = {
             attribute   : 'href',
             teitterObj  : {
                     href    : 'https://twitter.com',
-                    id      : 31
+                    id      : 31,
             }
         }
     },
     methods: {}
 }
 Vue.createApp(app2).mount('#app2');
+
+const app3 = {
+    data() {
+        return {
+            number  : 0,
+            x       : 0,
+            y       : 0,
+        }
+    },
+    methods: {
+        counter     : function(multiple) {
+            console.log(multiple);
+            if(multiple === undefined) {
+                this.number++;
+            } else {
+                this.number += 1 * multiple;
+            }
+        },
+        changeMousePosition: function(event, divideNumber) {
+            // console.log(event);
+            if(divideNumber === undefined || !(Number.isInteger(divideNumber))) {
+                this.x = event.clientX;
+                this.y = event.clientY;
+            } else {
+                this.x = event.clientX / divideNumber;
+                this.y = event.clientY / divideNumber;
+            }
+
+
+        }
+    }
+}
+Vue.createApp(app3).mount('#app3');
 
 // new Vue({
 //     el: '#app',
