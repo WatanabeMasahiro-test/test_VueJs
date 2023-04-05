@@ -38,7 +38,7 @@
 			<div class="row border-top mt-3 pt-3">
 				<a :[attribute]="urlGoogle" class="d-block">Google（attributeで「:href」）</a>
 				<a v-bind="{href: urlTwitter, id: idNumber}" class="d-block col">Twitter</a>
-				<a v-bind="teitterObj" class="d-block col">Twitter</a>
+				<a v-bind="twitterObj" class="d-block col">Twitter</a>
 			</div>
 		</div>
 
@@ -51,7 +51,40 @@
 			</div>
 			<div class="border-top mt-3 pt-3">
 				<p>X:{{ x }}、Y:{{ y }}</p>
-				<p><span v-on:mousemove="changeMousePosition($event, 3)" class="bg-info p-1">マウスを載せて動かしてみよう</span></p>
+				<p>
+					<span v-on:mousemove="changeMousePosition($event, 3)" class="bg-info me-3 p-1">マウスを載せて動かしてみよう</span>
+					<span v-on:mousemove.stop class="bg-primary p-1">ここは反応しない</span>
+				</p>
+			</div>
+			<div class="border-top mt-3 pt-3">
+				<p>v-on:click.preventでページ遷移しない</p>
+				<a v-on:click.prevent href="https://google.com">Google</a>
+			</div>
+			<div class="border-top mt-3 pt-3">
+				<p></p>
+				<input type="text" v-on:keyup.space.enter="myAlert">
+			</div>
+		</div>
+
+		<hr>
+
+		<div id="app4">
+			<div>
+				<p>現在『<span class="px-1">{{ number }}</span>』回クリックされています</p>
+				<div class="row">
+					<button v-on:[event]="counter(2)" class="col btn btn-primary mx-1">①カウントアップ</button>
+					<button @click="counter(3)"       class="col btn btn-primary mx-1">②カウントアップ</button>
+					<button @[event]="counter(4)"     class="col btn btn-primary mx-1">③カウントアップ</button>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+
+		<div id="app5">
+			<div>
+				<input type="text" v-model="message">
+				<p>{{ message }}</p>
 			</div>
 		</div>
     </div>

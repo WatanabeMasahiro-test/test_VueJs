@@ -45,7 +45,7 @@ const app2 = {
             urlTwitter  : 'https://twitter.com',
             idNumber      : 31,
             attribute   : 'href',
-            teitterObj  : {
+            twitterObj  : {
                     href    : 'https://twitter.com',
                     id      : 31,
             }
@@ -64,7 +64,7 @@ const app3 = {
         }
     },
     methods: {
-        counter     : function(multiple) {
+        counter             : function(multiple) {
             console.log(multiple);
             if(multiple === undefined) {
                 this.number++;
@@ -72,7 +72,7 @@ const app3 = {
                 this.number += 1 * multiple;
             }
         },
-        changeMousePosition: function(event, divideNumber) {
+        changeMousePosition : function(event, divideNumber) {
             // console.log(event);
             if(divideNumber === undefined || !(Number.isInteger(divideNumber))) {
                 this.x = event.clientX;
@@ -81,12 +81,50 @@ const app3 = {
                 this.x = event.clientX / divideNumber;
                 this.y = event.clientY / divideNumber;
             }
-
-
+        },
+        myAlert             : function() {
+            alert('アラート!');
         }
     }
 }
 Vue.createApp(app3).mount('#app3');
+
+const app4 = {
+    data() {
+        return {
+            number  : 0,
+            event   : 'click',
+        }
+    },
+    methods: {
+        counter             : function(multiple) {
+            if(multiple === undefined) {
+                this.number++;
+            } else {
+                this.number += 1 * multiple;
+            }
+        },
+    }
+}
+Vue.createApp(app4).mount('#app4');
+
+const app5 = {
+    data() {
+        return {
+            message : 'こんにちは',
+        }
+    },
+    methods: {
+        // counter             : function(multiple) {
+        //     if(multiple === undefined) {
+        //         this.number++;
+        //     } else {
+        //         this.number += 1 * multiple;
+        //     }
+    },
+}
+Vue.createApp(app5).mount('#app5');
+
 
 // new Vue({
 //     el: '#app',
