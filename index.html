@@ -23,9 +23,27 @@
 			<p>{{ ok ? 'YES' : 'NO' }}</p>
 			<p>{{ sayHi() }}</p>
 			<p>{{ returnMsg() }}</p>
-            <button v-on:click="reverseMessage">メッセージ反転</button>
+            <button v-on:click="reverseMessage" class="btn btn-success">メッセージ反転</button>
         </div>
+
+		<hr>
+
+		<div id="app2">
+			<div>{{ html_1 }}</div>
+			<div v-html="html_1"></div>
+			<div class="row">
+				<a v-bind:href="urlGoogle" class="d-block col">Google</a>
+				<a :href="urlGoogle" class="d-block col">Google（v-bind省略形）</a>
+			</div>
+			<div class="row border-top mt-3 pt-3">
+				<a :[attribute]="urlGoogle" class="d-block">Google（attributeで「:href」）</a>
+				<a v-bind="{href: urlTwitter, id: idNumber}" class="d-block col">Twitter</a>
+				<a v-bind="teitterObj" class="d-block col">Twitter</a>
+			</div>
+		</div>
     </div>
+
+	<hr>
 
     <footer></footer>
 

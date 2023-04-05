@@ -36,6 +36,23 @@ const app = {
 }
 Vue.createApp(app).mount('#app');
 
+const app2 = {
+    data() {
+        return {
+            html_1      : '<h1>h1タグです</h1>',
+            urlGoogle   : 'https://google.com',
+            urlTwitter  : 'https://twitter.com',
+            idNumber      : 31,
+            attribute   : 'href',
+            teitterObj  : {
+                    href    : 'https://twitter.com',
+                    id      : 31
+            }
+        }
+    },
+    methods: {}
+}
+Vue.createApp(app2).mount('#app2');
 
 // new Vue({
 //     el: '#app',
