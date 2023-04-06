@@ -105,6 +105,23 @@
 
 	<hr>
 
+	<div id="app6">
+		<div>
+			<h1 :class="{ 'test_red': true, 'test-bg-blue': true }">YEAHHHHHHHHHHHH!!!</h1>
+			<h1 :class="{ 'test_red': isActive, 'test-bg-blue': !isActive }">HELLOOOOOOOOO!!!</h1>
+			<button @click="isActive = !isActive">切り替え</button>
+			<h1 :class="classObj">CLASS_OBJECT!!!</h1>
+			<hr>
+			<h1 :class="[color, bg]">CLASS_OBJECT!!!</h1>
+			<h1 :class="[{test_red: isActive}, bg]">CLASS_OBJECT!!!</h1>
+			<h1 :style="{ color: textColor, 'background-color': bgColor }">CLASS_OBJECT_2!!!</h1>
+			<h1 :style="styleObj">CLASS_OBJECT_3!!!</h1>
+			<h1 :style="[styleObj, secondObj]">CLASS_OBJECT_4!!!</h1>
+		</div>
+    </div>
+
+	<hr>
+
     <footer></footer>
 
     <!--*** 以下、scriptタグ ***-->

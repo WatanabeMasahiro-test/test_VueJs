@@ -37,13 +37,14 @@ const app = {
 }
 Vue.createApp(app).mount('#app');
 
+
 const app2 = {
     data() {
         return {
             html_1      : '<h1>h1タグです</h1>',
             urlGoogle   : 'https://google.com',
             urlTwitter  : 'https://twitter.com',
-            idNumber      : 31,
+            idNumber    : 31,
             attribute   : 'href',
             twitterObj  : {
                     href    : 'https://twitter.com',
@@ -54,6 +55,7 @@ const app2 = {
     methods: {}
 }
 Vue.createApp(app2).mount('#app2');
+
 
 const app3 = {
     data() {
@@ -89,6 +91,7 @@ const app3 = {
 }
 Vue.createApp(app3).mount('#app3');
 
+
 const app4 = {
     data() {
         return {
@@ -108,6 +111,7 @@ const app4 = {
 }
 Vue.createApp(app4).mount('#app4');
 
+
 const app5 = {
     data() {
         return {
@@ -119,18 +123,54 @@ const app5 = {
     computed: {
         lessThanThree_Computed  : function() {
             console.log('computed');
-            return this.counter > 3 ? '3よりも上' : '3以下'
+            return this.counter > 3 ? '3よりも上' : '3以下';
+        }
+    },
+    watch: {
+        counter                 : function() {
+            var vm = this;
+            setTimeout( function() {
+                vm.counter = 0
+            }, 5000);
         }
     },
     methods: {
         lessThanFive_Method     : function() {
             console.log('methods');
-            return  this.counter > 5 ? '5よりも上' : '5以下'
+            return this.counter > 5 ? '5よりも上' : '5以下';
         }
     },
 }
 Vue.createApp(app5).mount('#app5');
 
+
+const app6 = {
+    data() {
+        return {
+            isActive: true,
+            color:      'testGreen',
+            bg:         'test-bg-blue',
+            textColor:  'red',
+            bgColor:    'blue',
+            styleObj: {
+                color:              'red',
+                // 'background-color': 'blue',
+                backgroundColor: 'blue',
+            },
+            secondObj: {
+                fontSize: '60px'
+            },
+        }
+    },
+    computed: {
+        classObj: function() {
+            return {
+                testGreen: this.isActive, 'test-bg-blue': !this.isActive
+            }
+        },
+    },
+}
+Vue.createApp(app6).mount('#app6');
 
 // new Vue({
 //     el: '#app',

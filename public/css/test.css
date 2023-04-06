@@ -1,3 +1,15 @@
 #app {
     color: blue;
 }
+
+.testGreen {
+    color: green;
+}
+
+.test_red {
+    color: red;
+}
+
+.test-bg-blue {
+    background-color: blue;
+}
