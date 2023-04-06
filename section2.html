@@ -18,13 +18,30 @@
     <div class="container">
 
         <div id="app">
-            <p v-once class="bg-info">①{{ message }}</p>
-            <p class="bg-info">②{{ message }}</p>
-            <p class="bg-info">{{ message2 }}</p>
-            <p>{{ ok ? 'YES' : 'NO' }}</p>
-            <p>{{ sayHi() }}</p>
-            <p>{{ returnMsg() }}</p>
-            <button v-on:click="reverseMessage" class="btn btn-success">メッセージ反転</button>
+            <button @click="boolSwitching()">切り替え</button>
+            <p v-if="bool">v-ifによるBoolean判定【TRUE】</p>
+            <p v-else-if="oddEvenBool">v-ifによるBoolean判定【奇数のみ{{ counter }}】<span class="badge bg-danger">3の倍数を除く</span></p>
+            <p v-else="bool">v-ifによるBoolean判定【FALSE】</p>
+        </div>
+
+        <hr>
+
+        <div id="app2">
+            <button @click="boolSwitching2()">切り替え2</button>
+            <template v-if="bool">
+                <p>Hello</p>
+                <p>GoodBye</p>
+                <p>おはよう</p>
+            </template>
+            <p v-show="bool">v-showの検証（display:none）</p>
+        </div>
+
+        <hr>
+
+        <div id="app3">
+            <ul>
+                <li v-for="fruit in fruits">{{ fruit }}</li>
+            </ul>
         </div>
 
     </div>

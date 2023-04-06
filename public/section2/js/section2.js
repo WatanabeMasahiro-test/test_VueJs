@@ -15,22 +15,53 @@ $(function() {
 const app = {
     data() {
         return {
-            message : 'HelloWorld!',
-            message2: 'HELLO',
-            ok      : true,
+            bool    : true,
+            oddEvenBool: false,
+            counter : 0,
         }
     },
     methods: {
-        reverseMessage  : function() {
-            this.message = this.message.split('').reverse().join('');
-        },
-        sayHi           : function() {
-            return 'Hi!!!';
-        },
-        returnMsg       : function() {
-            this.message2 = 'HelloVueJS';
-            return this.message2 + '___' + this.sayHi();
+        boolSwitching       : function() {
+            this.bool = !this.bool;
+            this.counter++;
+            if(this.counter % 2 == 1 && this.counter % 3 != 0) {
+                this.oddEvenBool = true;
+            } else if(this.counter % 3 == 0) {
+                this.oddEvenBool = false;
+            } else {
+                this.oddEvenBool = false;
+            }
         }
     }
 }
 Vue.createApp(app).mount('#app');
+
+
+const app2 = {
+    data() {
+        return {
+            bool    : true,
+        }
+    },
+    methods: {
+        boolSwitching2       : function() {
+            this.bool = !this.bool;
+        }
+    }
+}
+Vue.createApp(app2).mount('#app2');
+
+
+const app3 = {
+    data() {
+        return {
+            fruits : ['りんご', 'バナナ', 'ぶどう'],
+        }
+    },
+    methods: {
+        // boolSwitching2       : function() {
+        //     this.bool = !this.bool;
+        // }
+    }
+}
+Vue.createApp(app3).mount('#app3');
