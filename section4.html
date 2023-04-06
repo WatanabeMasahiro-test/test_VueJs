@@ -36,11 +36,25 @@
 
         <div id="app4"></div>
 
+        <hr>
+
+        <div id="app5">
+            <h1>こんにちは、{{ name }}</h1>
+            <button @click="nameChange()" class="btn btn-info mx-1">名前を変更</button>
+            <!-- <button @click="destroy()" class="btn btn-danger mx-1">インスタンスを破壊</button> -->
+        </div>
+
     </div>
 
     <hr>
 
-<footer></footer>
+    <!-- Vue3で、beforeDestroyとdestroyedは使えない -->
+    <a href="https://b1san-blog.com/post/vue/vue-3-composition-api/">destroy()は、unmounted()に変更？</a><br>
+    <a href="https://zenn.dev/yodaka/articles/84dc716de1d349">Vue3で、beforeDestroyとdestroyedは使えない</a>
+
+<footer>
+
+</footer>
 
 <!--*** 以下、scriptタグ ***-->
 <script src="./node_modules/vue/dist/vue.global.js"></script>
