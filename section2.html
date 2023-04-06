@@ -42,6 +42,49 @@
             <ul>
                 <li v-for="fruit in fruits">{{ fruit }}</li>
             </ul>
+            <ol>
+                <li v-for="(fruit, index) in fruits">({{ index }}){{ fruit }}</li>
+            </ol>
+            <div class="border m-2">
+                <ul>
+                    <li v-for="(value, key, index) in obj">[{{ index }}]【{{ key }}】{{ value }}</li>
+                </ul>
+                <ol>
+                    <li v-for="value in arrayObj">{{ value }}</li>
+                    <hr>
+                </ol>
+                <ol>
+                    <li v-for="value in arrayObj">{{ value.firstName }}</li>
+                    <hr>
+                </ol>
+                <ul>
+                    <template v-for="value in arrayObj">
+                        <li>{{ value.lastName }}</li>
+                        <hr class="w-50 text-info py-1">
+                    </template>
+                </ul>
+                <hr>
+                <!-- 整数値のv-for適用(Vue.js構文として) -->
+                <ul>
+                    <li v-for="n in 10">{{ n }}</li>
+                </ul>
+                <hr>
+                <!-- JS構文っぽく「of」を使っても同じ -->
+                <ul>
+                    <li v-for="n of 10">{{ n }}</li>
+                </ul>
+                <hr>
+                <div v-for="value in obj" :key="value">
+                    <p>{{ value }}</p>
+                    <input type="text">
+                </div>
+                <hr>
+                <div v-for="value in arrayObj" :key="value">
+                    <p>{{ value.firstName }}</p>
+                    <input type="text">
+                </div>
+                <button @click="remove()">先頭を削除</button>
+            </div>
         </div>
 
     </div>

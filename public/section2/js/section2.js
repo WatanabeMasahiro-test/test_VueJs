@@ -55,13 +55,35 @@ Vue.createApp(app2).mount('#app2');
 const app3 = {
     data() {
         return {
-            fruits : ['りんご', 'バナナ', 'ぶどう'],
+            fruits  : ['りんご', 'バナナ', 'ぶどう'],
+            obj     : {
+                firstName   : '太郎',
+                lastName    : '田中',
+                age         : 21
+            },
+            arrayObj: [
+                {
+                    firstName   : '太郎',
+                    lastName    : '田中',
+                    age         : 21
+                },
+                {
+                    firstName   : '太一',
+                    lastName    : '山田',
+                    age         : 32
+                },
+                {
+                    firstName   : '吾郎',
+                    lastName    : '設楽',
+                    age         : 44
+                },
+            ]
         }
     },
     methods: {
-        // boolSwitching2       : function() {
-        //     this.bool = !this.bool;
-        // }
+        remove : function() {
+            this.arrayObj.shift();
+        }
     }
 }
 Vue.createApp(app3).mount('#app3');
