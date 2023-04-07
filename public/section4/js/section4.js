@@ -12,12 +12,22 @@ $(function() {
 
 
 /*** Vue.jsの記述 ***/
+
+Vue.createApp({
+    }).component('hello', {
+        template: '<p>こんにちは</p>',
+    }).mount('#comp');
+
+
 const vm1 =  Vue.createApp({
-    data() {
-        return {
-            msg    : 'HELLO',
-        }
-    },
+    // data() {
+    //     return {
+    //         msg    : 'HELLO',
+    //     }
+    // },
+    data: () => ({
+        msg    : 'HELLO',
+    }),
     methods: {
     }
 }).mount('#app');
